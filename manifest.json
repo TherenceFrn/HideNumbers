@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "HideNumbers",
+  "version": "1.0",
+  "description": "Extension to hide numbers on famous social media websites",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "http://www.youtube.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["backgroundScript.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "HideNumbers"
+  },
+  "web_accessible_resources": [
+    "icon16.png",
+    "icon48.png",
+    "icon128.png"
+  ]
+}
